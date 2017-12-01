@@ -22,15 +22,15 @@ export interface DynamicLinksOptions {
  * Preferences:
  *
  * Preferences GoogleIOSClientId and GoogleAndroidClientId are used to setup dynamic links when you have an app for several platforms.
- * You can find values at your GoogleService-Info.plist (key ANDROID_CLIENT_ID) and google-services.json (key client[0].oauth_client[0].client_id).
+ * You can find values at your GoogleService-Info.plist (key CLIENT_ID) and google-services.json (key client[0].oauth_client[0].client_id).
  *
  *config.xml:
  * ```xml
  * <platform name="android">
- *     <preference name="GoogleIOSClientId" value="..." />
+ *     <preference name="GoogleAndroidClientId" value="..." />
  * </platform>
  * <platform name="ios">
- *     <preference name="GoogleAndroidClientId" value="..." />
+ *      <preference name="GoogleIOSClientId" value="..." />
  * </platform>
  * ```
  * @usage
@@ -43,10 +43,10 @@ export interface DynamicLinksOptions {
  * ...
  * // The deepLink and callToActionText properties are optional
  * const options: DynamicLinksOptions = {
- *   title: 'My Title';
- *   message: 'My message';
- *   deepLink: 'http://example.com/';
- *   callToActionText: 'Message on button';
+ *   title: 'My Title',
+ *   message: 'My message',
+ *   deepLink: 'http://example.com/',
+ *   callToActionText: 'Message on button'
  * }
  *
  * this.firebaseDynamicLinks.sendInvitation(options)
